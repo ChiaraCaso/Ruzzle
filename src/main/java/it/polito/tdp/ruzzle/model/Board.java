@@ -15,7 +15,8 @@ import javafx.beans.property.StringProperty;
  */
 public class Board {
 	private List<Pos> positions;
-	private Map<Pos, StringProperty> cells;
+	private Map<Pos, StringProperty> cells;  
+	//StringProperty -> possiamo fare in modo che il bottone sia collegato direttamente ai valori salvati nelle stringproperty
 
 	private int size;
 
@@ -70,7 +71,7 @@ public class Board {
 		for(Pos p: this.positions) {
 			int random = (int)(Math.random()*26) ;
 			String letter = Character.toString((char)('A'+random)) ;
-			this.cells.get(p).set(letter); 
+			this.cells.get(p).set(letter); //usiamo i .set perchè stiamo usando stringProperty
 		}
 	}
 	
